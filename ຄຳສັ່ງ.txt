@@ -1,0 +1,29 @@
+# SetUP:
+
+ລົງ Progarm VScode and XAMMP 
+
+# Connect Database (ຖ້າຕ້ອງການປ່ຽນ Setup Database)
+
+ຢູ່ scr/stores/admin/connectDB.js ສາມາດຢູ່ Tag 10 ໄດ້ເລີຍ 
+
+# Run Project:
+
+1. cd vue-angkham
+
+- ເປີດ Termainal ໃຫມ່
+2. npm run dev (Run ໜ້າບ້ານ ແລະ ຫຼັງບ້ານ)
+
+- ເປີດ Termainal ໃຫມ່ 
+3. npm run nodemon_server (Run ລະບົບອັບໂຫລດຮູບຫຼັງບ້ານ)
+
+- ເປີດ Termainal ໃຫມ່ 
+4. npm run DB (Run ລະບົບ CRUD ຫຼັງບ້ານ)
+
+
+ສາມາດແກ້ port ຢູ່ vite.confing 
+
+ເຂົ້າຫນ້າບ້ານ
+http://localhost:5000/
+
+ເຂົ້າຫຼັ້ງບ້ານ
+http://localhost:5000/admin/login
