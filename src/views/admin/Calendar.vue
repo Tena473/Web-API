@@ -147,10 +147,10 @@ onMounted(loadEvents)
 
 <template>
   <AdminLayout>
-    <main class="mx-4 my-6 max-w-screen-2xl">
+    <main class="mx-auto my-6 max-w-screen-2xl px-4">
       <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h1 class="text-3xl font-bold">Calendar</h1>
+          <h1 class="text-2xl font-bold sm:text-3xl">Calendar</h1>
           <p class="mt-1 text-base-content/60">{{ calendarName }}</p>
         </div>
         <button class="btn btn-outline" :disabled="loading" @click="loadEvents">
@@ -170,7 +170,8 @@ onMounted(loadEvents)
         <span>{{ errorMessage }}</span>
       </div>
 
-      <section class="overflow-hidden rounded-xl bg-base-100 shadow-xl">
+      <section class="overflow-x-auto">
+        <div class="min-w-[700px] overflow-hidden rounded-xl bg-base-100 shadow-xl">
         <header class="flex flex-wrap items-center justify-between gap-3 border-b border-base-300 p-4">
           <div class="join">
             <button class="btn join-item btn-sm" aria-label="Previous month" @click="changeMonth(-1)">‹</button>
@@ -203,6 +204,7 @@ onMounted(loadEvents)
               </div>
             </div>
           </article>
+        </div>
         </div>
       </section>
     </main>

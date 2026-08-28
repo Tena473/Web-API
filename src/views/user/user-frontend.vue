@@ -74,9 +74,9 @@ onMounted(async () => {
             <h2 class="card-title text-lg">{{ product.product_name }}</h2>
             <div class="badge badge-outline">{{ product.category }}</div>
             <p class="text-sm text-base-content/70 line-clamp-2">{{ product.description }}</p>
-            <div class="card-actions justify-between items-center mt-2">
+            <div class="card-actions mt-2 flex-col items-stretch gap-2 sm:flex-row sm:items-center sm:justify-between">
               <span class="text-lg font-bold text-primary">{{ formatPrice(product.price) }}</span>
-              <span class="btn btn-primary btn-sm">View</span>
+              <span class="btn btn-primary btn-sm w-full sm:w-auto">View</span>
             </div>
           </div>
         </RouterLink>

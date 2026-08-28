@@ -215,7 +215,7 @@ onMounted(async () => {
 
 <template>
   <AdminLayout>
-    <div class="shadow-xl p-8 m-2">
+    <div class="mx-auto my-4 max-w-4xl rounded-box shadow-xl p-4 sm:p-8">
       <div class="text-3xl font-bold">{{ mode }} Admin User</div>
       <div class="divider"></div>
 
@@ -262,8 +262,8 @@ onMounted(async () => {
             class="border border-gray-200 rounded-lg p-4">
 
             <!-- Category Header -->
-            <div class="flex items-center justify-between mb-3">
-              <div class="flex items-center gap-3">
+            <div class="mb-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div class="flex flex-wrap items-center gap-3">
                 <h3 class="text-lg font-semibold text-gray-800">{{ category }}</h3>
                 <div class="badge badge-outline">
                   {{permissions.filter(p => hasPermission(p.id)).length}} / {{ permissions.length }}
@@ -346,13 +346,13 @@ onMounted(async () => {
       </div>
 
       <div class="divider"></div>
-      <div class="flex justify-between items-center mt-4">
+      <div class="mt-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div class="text-sm text-gray-600">
           <span class="text-red-500">*</span> Required fields
         </div>
-        <div class="flex gap-2">
-          <button class="btn btn-ghost" @click="router.push({ name: 'admin-user-list' })">Cancel</button>
-          <button class="btn btn-primary" @click="updateStudent()">
+        <div class="flex w-full flex-col-reverse gap-2 sm:w-auto sm:flex-row">
+          <button class="btn btn-ghost w-full sm:w-auto" @click="router.push({ name: 'admin-user-list' })">Cancel</button>
+          <button class="btn btn-primary w-full sm:w-auto" @click="updateStudent()">
             {{ mode === 'EDIT' ? 'Update' : 'Create' }} Admin
           </button>
         </div>

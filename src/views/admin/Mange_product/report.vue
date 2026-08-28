@@ -107,32 +107,32 @@ onMounted(async () => {
 
 <template>
   <AdminLayout>
-    <div class="">
-      <div class="flex items-center justify-between my-6 mx-4">
-        <div class="text-3xl font-bold">Product sales report</div>
-        <RouterLink :to="{ name: 'admin-product-list' }" class="btn btn-ghost">Back</RouterLink>
+    <div class="mx-auto max-w-screen-2xl px-4 py-6">
+      <div class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div class="text-2xl font-bold sm:text-3xl">Product sales report</div>
+        <RouterLink :to="{ name: 'admin-product-list' }" class="btn btn-ghost w-full sm:w-auto">Back</RouterLink>
       </div>
 
       <!-- Filter -->
-      <div class="flex flex-wrap items-end gap-3 mx-4 mb-6">
-        <label class="form-control">
+      <div class="mb-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:flex lg:flex-wrap lg:items-end">
+        <label class="form-control w-full lg:w-auto">
           <div class="label"><span class="label-text">Product</span></div>
-          <input class="input input-bordered w-[300px]" v-model="productSearch" placeholder="Find a Product"
+          <input class="input input-bordered w-full lg:w-[300px]" v-model="productSearch" placeholder="Find a Product"
             type="text" />
         </label>
-        <label class="form-control">
+        <label class="form-control w-full lg:w-auto">
           <div class="label"><span class="label-text">From</span></div>
           <input class="input input-bordered" v-model="startDate" type="date" />
         </label>
-        <label class="form-control">
+        <label class="form-control w-full lg:w-auto">
           <div class="label"><span class="label-text">To</span></div>
           <input class="input input-bordered" v-model="endDate" type="date" />
         </label>
-        <button class="btn btn-ghost" @click="clearFilter()">Clear</button>
+        <button class="btn btn-ghost w-full sm:w-auto" @click="clearFilter()">Clear</button>
       </div>
 
       <!-- Summary -->
-      <div class="stats shadow mx-4 mb-6">
+      <div class="stats stats-vertical w-full shadow mb-6 sm:stats-horizontal">
         <div class="stat">
           <div class="stat-title">Orders</div>
           <div class="stat-value text-primary">{{ filteredOrders.length }}</div>
@@ -154,7 +154,7 @@ onMounted(async () => {
         <span class="loading loading-spinner loading-lg"></span>
       </div>
 
-      <div v-else-if="errorMessage" class="alert alert-error mx-4">
+      <div v-else-if="errorMessage" class="alert alert-error">
         <span>{{ errorMessage }}</span>
       </div>
 

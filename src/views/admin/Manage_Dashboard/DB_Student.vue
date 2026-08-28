@@ -470,8 +470,8 @@ onMounted(async () => {
 
 <template>
   <AdminLayout>
-    <div class="mx-4">
-      <div class="text-3xl my-4 mx-2">
+    <div class="mx-auto max-w-screen-2xl px-4">
+      <div class="my-4 text-2xl sm:text-3xl">
         Student Dashboard
       </div>
       <div class="stats w-full shadow mb-6">
@@ -484,9 +484,9 @@ onMounted(async () => {
         </div>
       </div>
     </div>
-    <div class="">
+    <div class="mx-auto max-w-screen-2xl px-4">
       <!-- Summary Stats -->
-      <div class="mb-4 grid stats shadow mx-4 grid-cols-1 md:grid-cols-3 gap-4 ">
+      <div class="mb-4 grid grid-cols-1 gap-4 md:grid-cols-3">
         <div class="stat bg-base-100 rounded-lg">
           <div class="stat-title text-sm">Year with Most Students</div>
           <div class="stat-value text-2xl text-primary">
@@ -522,13 +522,13 @@ onMounted(async () => {
           </div>
         </div>
         <!-- Chart Options -->
-        <div class="mx-4 mb-4">
-          <div class="flex items-center justify-between p-4 bg-base-200 rounded-lg">
-            <div class="flex items-center gap-4">
+        <div class="mb-4">
+          <div class="flex flex-col gap-4 rounded-lg bg-base-200 p-4 xl:flex-row xl:items-center xl:justify-between">
+            <div class="flex flex-wrap items-center gap-3">
               <div class="font-semibold">Chart View:</div>
 
               <!-- View Type Buttons -->
-              <div class="btn-group">
+              <div class="join">
                 <button @click="changeViewType('year')"
                   :class="['btn', viewType === 'year' ? 'btn-active btn-primary' : 'btn-outline']">
                   By Year
@@ -555,7 +555,7 @@ onMounted(async () => {
             </div>
 
             <!-- Download Buttons -->
-            <div class="flex items-center gap-2">
+            <div class="flex flex-wrap items-center gap-2">
               <div class="font-semibold text-sm">Export:</div>
 
               <button @click="downloadPDF" class="btn btn-error btn-sm gap-2" title="Download PDF Report">
@@ -580,7 +580,7 @@ onMounted(async () => {
         </div>
 
         <!-- Both charts use the same year/month selection and display together. -->
-        <div class="mx-4 grid grid-cols-1 2xl:grid-cols-2 gap-6 items-stretch">
+        <div class="grid grid-cols-1 items-stretch gap-6 xl:grid-cols-2">
           <section class="shadow-xl bg-white rounded-lg p-4 min-w-0">
             <apexchart :key="chartKey" type="bar" height="400" width="100%" :options="priceChart.options"
               :series="priceChart.series">
@@ -595,9 +595,9 @@ onMounted(async () => {
         </div>
 
         <!-- Year Comparison Table -->
-        <div class="mx-4 mt-8">
-          <div class="bg-white rounded-lg shadow-lg p-6">
-            <h2 class="text-2xl font-bold mb-4">Student Count by Year Comparison</h2>
+        <div class="mt-8">
+          <div class="rounded-lg bg-white p-4 shadow-lg sm:p-6">
+            <h2 class="mb-4 text-xl font-bold sm:text-2xl">Student Count by Year Comparison</h2>
             <div class="overflow-x-auto">
               <table class="table w-full">
                 <thead>

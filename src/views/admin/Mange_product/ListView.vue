@@ -58,17 +58,17 @@ onMounted(async () => {
 
 <template>
   <AdminLayout>
-    <div class="">
-      <div class="flex items-center justify-between my-6 mx-4">
-        <div class="flex items-center gap-2">
-          <div class="text-3xl font-bold">Product list</div>
-          <input class="input input-bordered w-[400px] mb-2" v-model="productSearch" placeholder="Find a Product"
+    <div class="mx-auto max-w-screen-2xl px-4 py-6">
+      <div class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div class="w-full sm:max-w-md">
+          <div class="text-2xl font-bold sm:text-3xl">Product list</div>
+          <input class="input input-bordered mt-3 w-full" v-model="productSearch" placeholder="Find a Product"
             type="text" />
         </div>
-        <div class="flex gap-2">
-          <RouterLink v-if="canViewReport" :to="{ name: 'admin-product-report' }" class="btn btn-outline">Report
+        <div class="flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
+          <RouterLink v-if="canViewReport" :to="{ name: 'admin-product-report' }" class="btn btn-outline w-full sm:w-auto">Report
           </RouterLink>
-          <RouterLink :to="{ name: 'admin-product-create' }" class="btn btn-neutral">Add New</RouterLink>
+          <RouterLink :to="{ name: 'admin-product-create' }" class="btn btn-neutral w-full sm:w-auto">Add New</RouterLink>
         </div>
       </div>
       <div class="overflow-x-auto">

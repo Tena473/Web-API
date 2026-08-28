@@ -125,17 +125,17 @@ const removeData = async () => {
 
 <template>
   <AdminLayout>
-    <div class="">
-      <div class="flex items-center justify-between my-6 mx-4">
-        <div class="text-3xl font-bold">Record Payment</div>
-        <div>
-          <RouterLink :to="{ name: 'admin-payment-create' }" class="btn btn-neutral">Add New</RouterLink>
+    <div class="mx-auto max-w-screen-2xl px-4 py-6">
+      <div class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div class="text-2xl font-bold sm:text-3xl">Record Payment</div>
+        <div class="flex w-full sm:w-auto">
+          <RouterLink :to="{ name: 'admin-payment-create' }" class="btn btn-neutral w-full sm:w-auto">Add New</RouterLink>
         </div>
       </div>
 
       <!-- Search Section -->
-      <div class="mx-4 mb-4">
-        <div class="flex gap-2 items-center">
+      <div class="mb-4">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-end">
           <div class="form-control flex-1">
             <label class="label">
               <span class="label-text">Search Payments</span>
@@ -144,7 +144,7 @@ const removeData = async () => {
               placeholder="Search by student name, course, level, date, or amount..."
               class="input input-bordered w-full" />
           </div>
-          <button @click="clearSearch" class="btn btn-outline btn-secondary self-end" :disabled="!searchQuery">
+          <button @click="clearSearch" class="btn btn-outline btn-secondary w-full sm:w-auto" :disabled="!searchQuery">
             Clear
           </button>
         </div>
@@ -244,7 +244,7 @@ const removeData = async () => {
       </div>
 
       <!-- Summary when searching -->
-      <div v-if="searchQuery" class="mx-4 mt-4 p-4 bg-base-200 rounded-lg">
+      <div v-if="searchQuery" class="mt-4 rounded-lg bg-base-200 p-4">
         <div class="text-sm">
           <strong>Search Summary:</strong> {{ filteredList.length }} of {{ paymentList.length }} payments shown
         </div>
@@ -258,8 +258,8 @@ const removeData = async () => {
       <!-- Detail Modal -->
       <div v-if="showModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
         <div class="bg-white rounded-lg shadow-xl p-6 m-4 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-          <div class="flex justify-between items-center mb-4">
-            <h2 class="text-2xl font-bold text-gray-800">Payment Details</h2>
+          <div class="flex items-start justify-between gap-3 mb-4">
+            <h2 class="text-xl font-bold text-gray-800 sm:text-2xl">Payment Details</h2>
             <button @click="closeDetailModal" class="btn btn-ghost btn-sm">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
@@ -319,7 +319,7 @@ const removeData = async () => {
           <!-- Payment Summary -->
           <div class="mt-6 bg-gray-50 p-4 rounded-lg">
             <h3 class="font-bold text-lg mb-2 text-gray-800">Payment Summary</h3>
-            <div class="flex justify-between items-center">
+          <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <span class="text-lg">Total Amount:</span>
               <div class="text-right">
                 <div class="text-green-600 font-bold text-xl">${{ selectedPaymentDetail.usd }}</div>
@@ -328,10 +328,10 @@ const removeData = async () => {
           </div>
 
           <!-- Modal Actions -->
-          <div class="flex justify-end gap-2 mt-6">
-            <button @click="closeDetailModal" class="btn btn-ghost">Close</button>
+          <div class="mt-6 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+            <button @click="closeDetailModal" class="btn btn-ghost w-full sm:w-auto">Close</button>
             <RouterLink :to="{ name: 'admin-payment-update', params: { id: getPaymentIndex(selectedPaymentDetail) } }"
-              class="btn btn-primary" @click="closeDetailModal">
+              class="btn btn-primary w-full sm:w-auto" @click="closeDetailModal">
               Edit Payment
             </RouterLink>
           </div>

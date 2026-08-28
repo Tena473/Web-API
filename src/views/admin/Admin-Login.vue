@@ -25,8 +25,8 @@ const login = async () => {
 </script>
 
 <template>
-  <div class="h-screen flex items-center">
-    <div class="flex-1 max-w-2xl shadow-xl mx-auto p-8">
+  <div class="flex min-h-screen items-center bg-base-200 px-4 py-8">
+    <div class="w-full max-w-md shadow-xl mx-auto rounded-box bg-base-100 p-5 sm:p-8">
       <div class="flex flex-col items-center"><h1 class="text-3xl">Admin Login</h1></div>
       <label class="form-control w-full">
         <div class="label"><span class="label-text">Name</span></div>

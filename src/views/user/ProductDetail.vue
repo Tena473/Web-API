@@ -93,7 +93,7 @@ onMounted(async () => {
             <input type="number" min="1" v-model.number="quantity" class="input input-bordered w-full" />
           </label>
 
-          <div class="flex items-center justify-between mt-4">
+          <div class="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <span class="text-lg">
               Total: <span class="font-bold text-primary">{{ formatPrice(totalPrice) }}</span>
             </span>
@@ -104,9 +104,9 @@ onMounted(async () => {
         </div>
       </div>
 
-      <div v-if="showConfirmModal" class="modal modal-open" role="dialog" aria-modal="true"
+      <div v-if="showConfirmModal" class="modal modal-open modal-bottom sm:modal-middle" role="dialog" aria-modal="true"
         aria-labelledby="confirm-order-title">
-        <div class="modal-box">
+        <div class="modal-box w-11/12 max-w-lg">
           <h2 id="confirm-order-title" class="text-2xl font-bold">Confirm your order</h2>
           <p class="mt-1 text-base-content/60">Please review the order details before confirming.</p>
 
@@ -131,9 +131,9 @@ onMounted(async () => {
             </div>
           </dl>
 
-          <div class="modal-action">
-            <button class="btn btn-ghost" :disabled="ordering" @click="closeConfirmModal">Cancel</button>
-            <button class="btn btn-primary" :disabled="ordering" @click="buyNow">
+          <div class="modal-action flex-col-reverse sm:flex-row">
+            <button class="btn btn-ghost w-full sm:w-auto" :disabled="ordering" @click="closeConfirmModal">Cancel</button>
+            <button class="btn btn-primary w-full sm:w-auto" :disabled="ordering" @click="buyNow">
               <span v-if="ordering" class="loading loading-spinner loading-sm"></span>
               {{ ordering ? 'Placing order...' : 'Confirm Order' }}
             </button>

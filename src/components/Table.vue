@@ -8,8 +8,8 @@ defineProps({
 </script>
 
 <template>
-  <div class="overflow-x-auto">
-    <table class="table">
+  <div class="w-full overflow-x-auto">
+    <table class="table min-w-max">
       <!-- head -->
       <thead>
         <tr>

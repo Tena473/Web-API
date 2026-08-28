@@ -41,10 +41,10 @@ onMounted(async () => {
 </script>
 <template>
   <AdminLayout>
-    <div class="flex items-center justify-between my-6 mx-4">
-      <div class="text-3xl font-bold">Admin</div>
-      <div>
-        <RouterLink :to="{ name: 'admin-user-create' }" class="btn btn-neutral">Add New</RouterLink>
+    <div class="mx-auto flex max-w-screen-2xl flex-col gap-4 px-4 py-6 sm:flex-row sm:items-center sm:justify-between">
+      <div class="text-2xl font-bold sm:text-3xl">Admin</div>
+      <div class="flex w-full sm:w-auto">
+        <RouterLink :to="{ name: 'admin-user-create' }" class="btn btn-neutral w-full sm:w-auto">Add New</RouterLink>
       </div>
     </div>
     <Table :headers="['Id', 'Name', 'Role', 'Updated At', 'Actions']">

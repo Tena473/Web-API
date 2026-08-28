@@ -161,15 +161,15 @@ onMounted(async () => {
 
 <template>
   <AdminLayout>
-    <div class="">
-      <div class="flex items-center justify-between my-6 mx-4">
-        <div class="flex items-center gap-2">
-          <div class="text-3xl font-bold">Student list</div>
-          <input class="input input-bordered w-[400px] mb-2" v-model="studentSearch" placeholder="Find a Student"
+    <div class="mx-auto max-w-screen-2xl px-4 py-6">
+      <div class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div class="w-full sm:max-w-md">
+          <div class="text-2xl font-bold sm:text-3xl">Student list</div>
+          <input class="input input-bordered mt-3 w-full" v-model="studentSearch" placeholder="Find a Student"
             type="text" />
         </div>
-        <div>
-          <RouterLink :to="{ name: 'admin-student-create' }" class="btn btn-neutral">Add New</RouterLink>
+        <div class="flex w-full sm:w-auto">
+          <RouterLink :to="{ name: 'admin-student-create' }" class="btn btn-neutral w-full sm:w-auto">Add New</RouterLink>
         </div>
       </div>
       <div class="overflow-x-auto">
@@ -213,7 +213,7 @@ onMounted(async () => {
               <!-- Put this part before </body> tag -->
               <input type="checkbox" :id="`my_modal_${data.student_id || index}`" class="modal-toggle" />
               <div class="modal" role="dialog">
-                <div class="modal-box">
+                <div class="modal-box w-11/12 max-w-2xl">
                   <!-- จัดเรียงข้อมูลตามวันที่ล่าสุดก่อน -->
                   <div v-for="(payment, pidx) in getPaymentsByFullname(data.fullname)" :key="pidx">
                     <div class="flex justify-between items-start mb-2">
@@ -245,7 +245,7 @@ onMounted(async () => {
 
                     <!-- แสดงข้อมูลรายละเอียด -->
                     <div class="bg-base-100 p-3 rounded-lg mb-3">
-                      <div class="grid grid-cols-2 gap-2 text-sm">
+                      <div class="grid grid-cols-1 gap-2 text-sm sm:grid-cols-2">
                         <p><span class="font-medium">Course:</span> {{ payment.course }}</p>
                         <p><span class="font-medium">Level:</span> {{ payment.level }}</p>
                         <p><span class="font-medium">Payment date:</span>
@@ -264,7 +264,7 @@ onMounted(async () => {
 
                       <!-- Payment Amount Section -->
                       <div class="divider divider-start text-xs">Payment Details</div>
-                      <div class="grid grid-cols-3 gap-2 text-sm">
+                      <div class="grid grid-cols-1 gap-2 text-sm sm:grid-cols-3">
                         <p><span class="font-medium">USD:</span>
                           <span class="font-bold text-green-600">${{ payment.usd }}</span>
                         </p>

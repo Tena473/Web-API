@@ -320,16 +320,16 @@ watch([() => Data.time_study, () => Data.no_of_weeks, () => Data.discount], calc
 
 <template>
   <AdminLayout>
-    <div class="shadow-xl p-8 m-2">
+    <div class="mx-auto my-4 max-w-5xl rounded-box shadow-xl p-4 sm:p-8">
 
       <div class="text-3xl font-bold">{{ mode }}</div>
       <div class="divider"></div>
 
-      <div role="tablist" class="tabs tabs-bordered ">
+      <div role="tablist" class="tabs tabs-bordered overflow-x-auto">
         <!-- Tab1 Strat -->
         <input type="radio" name="my_tabs_1" role="tab" class="tab" aria-label="Student" checked="checked" />
-        <div role="tabpanel" class="tab-content p-10">
-          <div class="grid grid-cols-2 gap-4">
+        <div role="tabpanel" class="tab-content p-4 sm:p-8">
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
             <!-- Loop Date input Strat  -->
             <label class="form-control w-full" v-for="(from, index) in fromData" :key="from">
               <div class="label">
@@ -357,8 +357,8 @@ watch([() => Data.time_study, () => Data.no_of_weeks, () => Data.discount], calc
 
         <!-- Tab2 Strat -->
         <input type="radio" name="my_tabs_1" role="tab" class="tab" aria-label="Courses" />
-        <div role="tabpanel" class="tab-content p-10">
-          <div class="grid grid-cols-2 gap-4">
+        <div role="tabpanel" class="tab-content p-4 sm:p-8">
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
             <!-- Loop Date input Strat  -->
             <label class="form-control w-full" v-for="(from, index) in fromData1" :key="from">
               <div class="label">
@@ -378,8 +378,8 @@ watch([() => Data.time_study, () => Data.no_of_weeks, () => Data.discount], calc
 
         <!-- Tab3 Strat -->
         <input type="radio" name="my_tabs_1" role="tab" class="tab" aria-label="Payment" />
-        <div role="tabpanel" class="tab-content p-10">
-          <div class="grid grid-cols-2 gap-4">
+        <div role="tabpanel" class="tab-content p-4 sm:p-8">
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
             <!-- Loop Date input Strat  -->
             <label class="form-control w-full" v-for="(from, index) in fromData2" :key="from">
               <div class="label">
@@ -436,9 +436,9 @@ watch([() => Data.time_study, () => Data.no_of_weeks, () => Data.discount], calc
 
       <div class="divider"></div>
 
-      <div class="flex justify-end mt-4">
-        <button class="btn btn-ghost" @click="router.push({ name: 'admin-payment-list' })">Back</button>
-        <button class="btn btn-neutral" @click="updateStudent()" :disabled="!Data.course">{{ mode }}</button>
+      <div class="mt-4 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+        <button class="btn btn-ghost w-full sm:w-auto" @click="router.push({ name: 'admin-payment-list' })">Back</button>
+        <button class="btn btn-neutral w-full sm:w-auto" @click="updateStudent()" :disabled="!Data.course">{{ mode }}</button>
       </div>
     </div>
   </AdminLayout>
